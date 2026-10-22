@@ -1,0 +1,23 @@
+{
+    "name": "Us, Always",
+    "short_name": "Us, Always",
+    "description": "Our little world, together always.",
+    "start_url": "./index.html",
+    "scope": "./",
+    "display": "standalone",
+    "background_color": "#fff5f7",
+    "theme_color": "#c71573",
+    "icons": [{
+            "src": "./icons/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "./icons/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        }
+    ]
+}

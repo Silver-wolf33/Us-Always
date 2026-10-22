@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fff9f5" />
+    <title>Us, Always ♡</title>
+    <link rel="manifest" href="./manifest.json" />
+    <meta name="theme-color" content="#c71573" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <section class="auth-screen" id="authScreen" aria-label="Couple login">
+        <div class="auth-glow glow-one"></div>
+        <div class="auth-glow glow-two"></div>
+        <span class="auth-floating-heart floating-one">♡</span
+      ><span class="auth-floating-heart floating-two">♥</span
+      ><span class="auth-sparkle sparkle-one">✧</span
+      ><span class="auth-sparkle sparkle-two">✦</span>
+        <div class="auth-card">
+            <div class="auth-brand-mark">♡</div>
+            <p class="auth-kicker">A LITTLE SPACE, JUST FOR TWO</p>
+            <h1 id="authTitle">Welcome <em>back.</em></h1>
+            <p class="auth-subtitle" id="authSubtitle">
+                Our memories, our plans, our little universe.
+            </p>
+            <form id="authForm" class="auth-form">
+                <label for="authPhone">Mobile number</label>
+                <div class="auth-input-wrap">
+                    <span>♡</span
+            ><input
+              id="authPhone"
+              type="tel"
+              inputmode="tel"
+              autocomplete="tel"
+              placeholder="Your mobile number"
+              required
+              maxlength="20"
+            />
+          </div>
+          <label for="authPassword" id="authPasswordLabel">Password</label>
+          <div class="auth-input-wrap">
+            <span>✧</span
+            ><input
+              id="authPassword"
+              type="password"
+              autocomplete="current-password"
+              placeholder="At least 4 characters"
+              required
+              minlength="4"
+              maxlength="80"
+            />
+          </div>
+          <div class="auth-extra-field" id="authRecoveryField" hidden>
+            <label for="authRecovery">Recovery PIN / secret</label>
+            <div class="auth-input-wrap">
+              <span>♡</span
+              ><input
+                id="authRecovery"
+                type="password"
+                autocomplete="off"
+                placeholder="A secret only you know"
+                minlength="4"
+                maxlength="80"
+              />
+            </div>
+            <small id="authRecoveryHint"
+              >Choose a recovery secret. You will need it if you forget your
+              password.</small
+            >
+          </div>
+          <p class="auth-error" id="authError" role="alert"></p>
+          <button class="auth-submit" type="submit" id="authSubmit">
+            Open our little world <span>♡</span>
+                    </button>
+            </form>
+            <p class="auth-switch-line" id="authSwitchLine">
+                <span id="authSwitchText">New to our space?</span>
+                <button type="button" id="authSwitch">Create account</button>
+            </p>
+            <p class="auth-forgot-line" id="authForgotLine">
+                <button type="button" id="authForgot">Forgot password?</button>
+            </p>
+            <p class="auth-reset-back" id="authResetBack" hidden>
+                <button type="button" id="authResetCancel">← Back to login</button>
+            </p>
+            <div class="auth-footer">
+                <span>✦</span> made with love, for our little forever <span>✦</span>
+            </div>
+            <p class="auth-local-note">
+                Frontend demo: account details stay in this browser only. This is not secure authentication yet.
+            </p>
+            </div>
+    </section>
+    <div class="app-shell" id="appShell" hidden>
+        <aside class="sidebar" id="sidebar">
+            <a class="brand" href="#" data-page="home" aria-label="Us Always home">
+                <span class="brand-mark">♡</span>
+                <span><strong>us, always</strong><small>our little universe</small></span
+          >
+        </a>
+
+        <div class="nav-label">OUR SPACE</div>
+        <nav class="main-nav" aria-label="Main navigation">
+          <button class="nav-link active" data-page="home">
+            <span>⌂</span> Our dashboard
+                </button>
+                <button class="nav-link" data-page="love">
+            <span>♡</span> Love counter
+          </button>
+                <button class="nav-link" data-page="dates">
+            <span>☼</span> Date planner
+          </button>
+                <button class="nav-link" data-page="moments">
+            <span>▧</span> Our moments
+          </button>
+                <button class="nav-link" data-page="interests">
+            <span>✳</span> Little things
+          </button>
+                </nav>
+
+                <div class="sidebar-note">
+                    <span class="note-heart">♥</span>
+                    <p>In a world full of people, I'm glad it's you.</p>
+                    <small>— your favorite human</small>
+                </div>
+                <div class="sidebar-footer">MADE WITH <span>♥</span> FOR TWO</div>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <button class="mobile-menu icon-button" id="menuToggle" aria-label="Open navigation">
+            ☰
+          </button>
+                <div class="breadcrumb">
+                    <span>OUR LITTLE UNIVERSE</span><b>/</b
+            ><strong id="pageCrumb">Dashboard</strong>
+          </div>
+          <div class="topbar-right">
+            <span class="live-dot"></span><span>just us two</span
+            ><span class="top-heart">♡</span
+            ><button
+              class="logout-button"
+              id="logoutButton"
+              type="button"
+              title="Lock our space"
+            >
+              Lock ♡
+            </button>
+          </div>
+        </header>
+
+        <section class="page active" id="page-home">
+          <div class="hero">
+            <div class="hero-copy">
+              <span class="eyebrow"
+                ><span>✦</span> A LITTLE LOVE, EVERY DAY</span
+              >
+              <h1>Our love, in<br /><em>little moments.</em></h1>
+              <p>
+                A tiny corner of the internet that belongs to just us. Keep the
+                kisses, the plans, and all the memories.
+              </p>
+              <button class="primary-button" data-go="moments">
+                Visit our memories <span>↗</span>
+              </button>
+            </div>
+            <div class="hero-art" aria-label="Decorative heart illustration">
+              <div class="orbit orbit-one"></div>
+              <div class="orbit orbit-two"></div>
+              <div class="hero-heart">♥</div>
+              <span class="float-heart heart-a">♡</span
+              ><span class="float-heart heart-b">♥</span>
+              <span class="sparkle sparkle-a">✦</span
+              ><span class="sparkle sparkle-b">✧</span>
+              <span class="tiny-note">you + me<br />= always</span>
+            </div>
+            <span class="hero-decoration">♡</span>
+          </div>
+
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">THE IMPORTANT LITTLE THINGS</span>
+              <h2>Our world at a glance</h2>
+            </div>
+            <span class="date-chip" id="todayLabel">Today, with love</span>
+          </div>
+          <div class="stats-grid">
+            <article class="stat-card blush-card">
+              <div class="stat-top">
+                <span class="stat-icon">💋</span
+                ><span class="stat-caption">SWEETNESS</span>
+              </div>
+              <strong id="homeKisses">0</strong>
+              <p>kisses collected</p>
+              <button data-go="love">Add a kiss <span>↗</span></button>
+            </article>
+            <article class="stat-card cream-card">
+              <div class="stat-top">
+                <span class="stat-icon">🫂</span
+                ><span class="stat-caption">COMFORT</span>
+              </div>
+              <strong id="homeHugs">0</strong>
+              <p>hugs and counting</p>
+              <button data-go="love">Need a hug? <span>↗</span></button>
+            </article>
+            <article class="stat-card sage-card">
+              <div class="stat-top">
+                <span class="stat-icon">✿</span
+                ><span class="stat-caption">NEXT ADVENTURE</span>
+              </div>
+              <strong class="stat-date" id="homeNextDate">Not yet</strong>
+              <p id="homeNextDateNote">Let's plan something lovely</p>
+              <button data-go="dates">Plan a date <span>↗</span></button>
+            </article>
+            <article class="stat-card lilac-card">
+              <div class="stat-top">
+                <span class="stat-icon">📸</span
+                ><span class="stat-caption">OUR STORY</span>
+              </div>
+              <strong id="homeMoments">0</strong>
+              <p>memories saved</p>
+              <button data-go="moments">See our moments <span>↗</span></button>
+            </article>
+          </div>
+
+          <div class="home-columns">
+            <article class="panel next-date-panel">
+              <div class="panel-heading">
+                <div>
+                  <span class="eyebrow">SOMETHING TO LOOK FORWARD TO</span>
+                  <h3>Our next date</h3>
+                </div>
+                <span class="round-icon">♡</span>
+              </div>
+              <div id="nextDateContent" class="empty-state compact-empty">
+                <span>☕</span><strong>No date planned just yet</strong>
+                <p>A little coffee date? A long walk? You choose.</p>
+                <button class="text-button" data-go="dates">
+                  Make a plan <span>→</span>
+                </button>
+              </div>
+            </article>
+            <article class="panel tiny-love-panel">
+              <span class="quote-mark">“</span>
+              <p id="dailyQuote">
+                If I had to choose again, I'd still choose you.
+              </p>
+              <div class="quote-footer">
+                <span class="quote-line"></span><span>A LITTLE REMINDER</span>
+              </div>
+              <button
+                class="shuffle-quote"
+                id="newQuote"
+                aria-label="Show another love note"
+              >
+                ↻
+              </button>
+            </article>
+          </div>
+          <div class="section-heading recent-heading">
+            <div>
+              <span class="eyebrow">THE CAMERA ROLL OF OUR HEARTS</span>
+              <h2>Recently remembered</h2>
+            </div>
+            <button class="text-button" data-go="moments">
+              All memories →
+            </button>
+          </div>
+          <div id="recentMoments" class="recent-grid">
+            <div class="empty-state">
+              <span>♡</span>
+              <p>Your favorite moments will live here.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="page" id="page-love">
+          <div class="page-intro">
+            <span class="eyebrow">A SCIENTIFICALLY UNPROVEN LOVE METRIC</span>
+            <h1>Love <em>counter.</em></h1>
+            <p>
+              For all the kisses, hugs, cuddles, and tiny acts of affection.
+              Every little one counts. 💗
+            </p>
+          </div>
+          <div class="counter-summary">
+            <div>
+              <span class="summary-icon">♡</span>
+              <div>
+                <small>TOTAL LOVE POINTS</small
+                ><strong id="totalLove">0</strong>
+              </div>
+            </div>
+            <p>Warning: this counter may cause excessive smiling.</p>
+          </div>
+          <div class="counter-grid" id="counterGrid"></div>
+          <article class="panel custom-counter-panel">
+            <div class="panel-heading">
+              <div>
+                <span class="eyebrow">YOUR OWN LITTLE CATEGORY</span>
+                <h3>Add a custom counter</h3>
+              </div>
+              <span class="round-icon">＋</span>
+            </div>
+            <form id="categoryForm" class="inline-form">
+              <label class="sr-only" for="categoryName">Category name</label
+              ><input
+                id="categoryName"
+                maxlength="24"
+                placeholder="e.g. forehead kisses, compliments..."
+                required
+              /><button class="primary-button" type="submit">
+                Add category <span>＋</span>
+              </button>
+            </form>
+          </article>
+          <p class="privacy-hint">
+            ♡ Counters are just for fun. No pressure, no scorekeeping—only
+            affection you both enjoy.
+          </p>
+        </section>
+
+        <section class="page" id="page-dates">
+          <div class="page-intro">
+            <span class="eyebrow">PLANS, PLOT TWISTS & SECOND CHANCES</span>
+            <h1>Date <em>planner.</em></h1>
+            <p>
+              Dream up the next date, celebrate the ones that happened, and
+              reschedule the ones life got in the way of.
+            </p>
+          </div>
+          <div class="date-summary-grid">
+            <div class="mini-stat">
+              <span>🌷</span>
+              <div>
+                <small>UPCOMING</small><strong id="upcomingCount">0</strong>
+              </div>
+            </div>
+            <div class="mini-stat">
+              <span>✨</span>
+              <div>
+                <small>COMPLETED</small><strong id="completedCount">0</strong>
+              </div>
+            </div>
+            <div class="mini-stat">
+              <span>🌧️</span>
+              <div>
+                <small>CANCELLED</small><strong id="cancelledCount">0</strong>
+              </div>
+            </div>
+          </div>
+          <article class="panel form-panel">
+            <div class="panel-heading">
+              <div>
+                <span class="eyebrow">MAKE A LITTLE PLAN</span>
+                <h3>Add a date idea</h3>
+              </div>
+              <span class="round-icon">♡</span>
+            </div>
+            <form id="dateForm" class="form-grid">
+              <div class="field full-field">
+                <label for="dateTitle">Date plan</label
+                ><input
+                  id="dateTitle"
+                  maxlength="80"
+                  placeholder="e.g. Sunset walk by the lake"
+                  required
+                />
+              </div>
+              <div class="field">
+                <label for="dateWhen">Date</label
+                ><input id="dateWhen" type="date" required />
+              </div>
+              <div class="field">
+                <label for="dateTime">Time (optional)</label
+                ><input id="dateTime" type="time" />
+              </div>
+              <div class="field full-field">
+                <label for="dateDetails">Little details (optional)</label
+                ><textarea
+                  id="dateDetails"
+                  rows="2"
+                  maxlength="220"
+                  placeholder="What should we bring? Where should we meet?"
+                ></textarea>
+              </div>
+              <div class="field full-field reminder-check">
+                <label
+                  ><input id="dateReminder" type="checkbox" checked /> Show a
+                  reminder in this app when the date is coming up</label
+                >
+              </div>
+              <div class="full-field form-actions">
+                <button class="primary-button" type="submit">
+                  Save our plan <span>♡</span>
+                </button>
+              </div>
+            </form>
+          </article>
+          <div class="list-heading">
+            <h2>Our plans</h2>
+            <div class="filter-tabs" id="dateFilters">
+              <button class="selected" data-filter="all">All</button
+              ><button data-filter="upcoming">Upcoming</button
+              ><button data-filter="completed">Completed</button
+              ><button data-filter="cancelled">Cancelled</button>
+            </div>
+          </div>
+          <div id="dateList" class="date-list"></div>
+        </section>
+
+        <section class="page" id="page-moments">
+          <div class="page-intro">
+            <span class="eyebrow">LITTLE THINGS WE NEVER WANT TO FORGET</span>
+            <h1>Our <em>moments.</em></h1>
+            <p>
+              Photos, tiny stories, and the kind of memories that make an
+              ordinary day feel special.
+            </p>
+          </div>
+          <article class="panel upload-panel">
+            <div class="upload-illustration">📷<span>✦</span></div>
+            <div class="upload-content">
+              <span class="eyebrow">SAVE A LITTLE MEMORY</span>
+              <h3>Add to our gallery</h3>
+              <p>
+                Choose a photo, give the moment a name, and write the tiny story
+                behind it.
+              </p>
+              <form id="momentForm" class="form-grid">
+                <div class="field">
+                  <label for="momentTitle">Memory title</label
+                  ><input
+                    id="momentTitle"
+                    maxlength="70"
+                    placeholder="Our first coffee date"
+                    required
+                  />
+                </div>
+                <div class="field">
+                  <label for="momentDate">When was it?</label
+                  ><input id="momentDate" type="date" required />
+                </div>
+                <div class="field full-field">
+                  <label for="momentDescription">The little story</label
+                  ><textarea
+                    id="momentDescription"
+                    rows="3"
+                    maxlength="400"
+                    placeholder="What made this moment special?"
+                  ></textarea>
+                </div>
+                <div class="field full-field">
+                  <label class="file-label" for="momentPhoto"
+                    ><span>＋</span> Choose a photo
+                    <small id="fileName"
+                      >JPG, PNG or WEBP · up to 4 MB</small
+                    ></label
+                  ><input
+                    id="momentPhoto"
+                    type="file"
+                    accept="image/*"
+                    required
+                  />
+                </div>
+                <div class="full-field form-actions">
+                  <button class="primary-button" type="submit">
+                    Keep this memory <span>♡</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </article>
+          <div class="gallery-toolbar">
+            <div>
+              <h2>Our little gallery</h2>
+              <p id="galleryCount">0 memories, and counting</p>
+            </div>
+            <input
+              id="momentSearch"
+              class="search-input"
+              type="search"
+              placeholder="Search memories..."
+            />
+          </div>
+          <div id="momentGallery" class="moment-gallery"></div>
+        </section>
+
+        <section class="page" id="page-interests">
+          <div class="page-intro">
+            <span class="eyebrow">THINGS WE LOVE (AND WANT TO TRY)</span>
+            <h1>Our little <em>things.</em></h1>
+            <p>
+              Shared interests, future adventures, silly challenges—our very own
+              couple bucket list.
+            </p>
+          </div>
+          <div class="interest-layout">
+            <article class="panel interest-form-panel">
+              <div class="panel-heading">
+                <div>
+                  <span class="eyebrow">ADD TO OUR WORLD</span>
+                  <h3>A new little thing</h3>
+                </div>
+                <span class="round-icon">✳</span>
+              </div>
+              <form id="interestForm" class="form-grid">
+                <div class="field full-field">
+                  <label for="interestTitle">Idea or interest</label
+                  ><input
+                    id="interestTitle"
+                    maxlength="80"
+                    placeholder="Learn to bake cinnamon rolls"
+                    required
+                  />
+                </div>
+                <div class="field full-field">
+                  <label for="interestType">Category</label
+                  ><select id="interestType">
+                    <option>Want to try</option>
+                    <option>We both love</option>
+                    <option>Couple challenge</option>
+                    <option>Someday dream</option>
+                  </select>
+                </div>
+                <div class="field full-field">
+                  <label for="interestNote">A little note (optional)</label
+                  ><textarea
+                    id="interestNote"
+                    rows="3"
+                    maxlength="220"
+                    placeholder="Extra details or why we want to do it..."
+                  ></textarea>
+                </div>
+                <div class="full-field form-actions">
+                  <button class="primary-button" type="submit">
+                    Add to our list <span>＋</span>
+                  </button>
+                </div>
+              </form>
+            </article>
+            <div class="interest-list-wrap">
+              <div class="list-heading">
+                <h2>Our bucket list</h2>
+                <span class="date-chip" id="interestCount"
+                  >0 little things</span
+                >
+              </div>
+              <div id="interestList" class="interest-list"></div>
+            </div>
+          </div>
+        </section>
+
+        <footer class="app-footer">
+          <span>made with <b>♥</b> and a little bit of magic</span><span>OUR LITTLE UNIVERSE · EST. WHEN WE MET</span>
+                    </footer>
+        </main>
+        </div>
+        <div class="toast" id="toast" role="status" aria-live="polite"></div>
+        <div class="modal-backdrop" id="modalBackdrop" hidden>
+            <div class="confirm-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+                <span class="modal-heart">♡</span>
+                <h3 id="modalTitle">A tiny question</h3>
+                <p id="modalText">Are you sure?</p>
+                <div class="modal-actions">
+                    <button class="secondary-button" id="modalCancel">Keep it</button
+          ><button class="danger-button" id="modalConfirm">Yes, remove</button>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+</body>
+
+</html>
