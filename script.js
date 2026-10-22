@@ -3,7 +3,7 @@
 (() => {
         "use strict";
 
-        const API_BASE = "http://localhost:3000/api";
+        const API_BASE = "https://us-always-backend.onrender.com/api";
         const TOKEN_KEY = "usAlwaysToken_v1";
 
         const STORAGE_KEY = "usAlwaysApp_v1";
@@ -69,9 +69,7 @@
             const response = await fetch(`${API_BASE}${path}`, {
                 method: options.method || "GET",
                 headers,
-                ...(options.body !== undefined ?
-                    { body: JSON.stringify(options.body) } :
-                    {}),
+                ...(options.body !== undefined ? { body: JSON.stringify(options.body) } : {}),
             });
 
             const payload = await response.json().catch(() => ({}));
@@ -330,8 +328,7 @@
         try {
             const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
             data =
-                saved && Array.isArray(saved.counters) ?
-                {...defaultData(), ...saved } :
+                saved && Array.isArray(saved.counters) ? {...defaultData(), ...saved } :
                 defaultData();
         } catch {
             data = defaultData();
